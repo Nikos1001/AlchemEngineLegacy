@@ -1,0 +1,16 @@
+#version 330
+
+in vec2 texCoord;
+
+uniform sampler2D mainTex;
+
+out vec4 out_Color;
+
+void main(void){
+
+	out_Color = texture(mainTex, texCoord);
+	if(out_Color.a < 0.5) {
+		discard;
+	}
+
+}
